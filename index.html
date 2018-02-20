@@ -1,31 +1,105 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Marvel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="assets/CSS/style.css">
-  </head>
-  <body>
-    <section>
-      <div class="row">
-        <div class="col-s-12">
-          <input id="input-text"type="text" name="" value="">
-          <button id="btn-search" type="button" name="button">Buscar</button>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Api</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900|Sacramento" rel="stylesheet">
+  <!-- Materialize Css -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+
+<body>
+  <!-- login -->
+  <main>
+    <center>
+      <div class="container">
+        <div class=" marco z-depth-1 grey lighten-4 row">
+          <h5 class="indigo-text">Please, login into your account</h5>
+          <!-- Ingreso con google -->
+          <form class="col s12" method="post">
+            <div class='row container'>
+              <button type='submit' name='btn_google' class='col s12 btn waves-effect red social'>
+                <i class="fa fa-google" aria-hidden="true"></i> Sign Google
+              </button>
+              <button type='submit' name='btn_facebook' class='col s12 btn waves-effect blue social'>
+                <i class="fa fa-facebook" aria-hidden="true"></i> Sign Facebook
+              </button>
+              <div class='col s12'>
+              </div>
+            </div>
+            <!-- Input email-->
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='email' name='email' id='email' />
+                <label for='email'>Enter your email</label>
+              </div>
+            </div>
+            <!-- Input Password -->
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input  class='validate' type='password' name='password' id='password' />
+                <label for='password'>Enter your password</label>
+              </div>
+              <label style='float: right;'>
+                <a href='#!'>
+                  <b>Forgot Password?</b>
+                </a>
+              </label>
+            </div>
+            <!-- boton login -->
+            <center>
+              <div class='row'>
+                <button type='submit' name='btn_login' class='btn_login col s12 btn pink lighten-1'>Login</button>
+                <a href="#!">Create account</a>
+              </div>
+            </center>
+          </form>
         </div>
       </div>
-    </section>
 
-    <section>
-      <div class="row">
-        <div id="marvelDate" class="col-s-12">
-        </div>
-      </div>
-    </section>
+    </center>
+  </main> <!-- fin del login  -->
 
-    <!-- script file -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- section Api -->
+<section>
+  <div class="row">
+    <div class="col-s-12">
+      <input id="input-Text" type="text" name="" value="">
+      <button id="btn-search" type="button" name="button">Buscar</button>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="row">
+    <div class="col-lg-12 imgMarvel"></div>
+    <div class="col-lg-12 col-lg-offset-4 text-center">
+      <div class="marvelDate"></div>
+  	</div>
+  </div>
+</section>
 
-    <script src="assets/JS/app.js" charset="utf-8"></script>
-  </body>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCbfOPEU_ZN_eOdXQ5_GgjIqhSbWCd_4UY",
+      authDomain: "marvel-29d81.firebaseapp.com",
+      databaseURL: "https://marvel-29d81.firebaseio.com",
+      projectId: "marvel-29d81",
+      storageBucket: "marvel-29d81.appspot.com",
+      messagingSenderId: "838315840167"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <!-- Icons Font Awesome -->
+  <script src="https://use.fontawesome.com/f1462b63cd.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="assets/JS/app.js"></script>
+</body>
+
 </html>
