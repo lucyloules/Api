@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!-- Icono de pestaña -->
+  <link rel="shortcut icon" href="assets/img/logo.png" type="image/png"> <!-- cambiar foto -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900|Sacramento" rel="stylesheet">
+  <!-- Materialize Css -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+  <!-- login -->
+  <main>
+    <center>
+      <img class="responsive-img logo" src="assets/img/trivia.png" /><!-- cambiar foto -->
+      <div class="container">
+        <div class=" marco z-depth-1 grey lighten-4 row">
+          <h5 class="indigo-text">Please, login into your account</h5>
+          <!-- Ingreso con google -->
+          <form class="col s12" method="post">
+            <div class='row container'>
+              <button type='submit' name='btn_google' class='col s12 btn waves-effect red social'>
+                <i class="fa fa-google" aria-hidden="true"></i> Sign Google
+              </button>
+              <button type='submit' name='btn_facebook' class='col s12 btn waves-effect blue social'>
+                <i class="fa fa-facebook" aria-hidden="true"></i> Sign Facebook
+              </button>
+              <div class='col s12'>
+              </div>
+            </div>
+            <!-- Input email-->
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='email' name='email' id='email' />
+                <label for='email'>Enter your email</label>
+              </div>
+            </div>
+            <!-- Input Password -->
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input  class='validate' type='password' name='password' id='password' />
+                <label for='password'>Enter your password</label>
+              </div>
+              <label style='float: right;'>
+                <a href='#!'>
+                  <b>Forgot Password?</b>
+                </a>
+              </label>
+            </div>
+            <!-- boton login -->
+            <center>
+              <div class='row'>
+                <button type='submit' name='btn_login' class='btn_login col s12 btn pink lighten-1'>Login</button>
+                <a href="#!">Create account</a>
+              </div>
+            </center>
+          </form>
+        </div>
+      </div>
+
+    </center>
+  </main> <!-- fin del login  -->
+<!-- section maquetear -->
+  <section></section>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCbfOPEU_ZN_eOdXQ5_GgjIqhSbWCd_4UY",
+      authDomain: "marvel-29d81.firebaseapp.com",
+      databaseURL: "https://marvel-29d81.firebaseio.com",
+      projectId: "marvel-29d81",
+      storageBucket: "marvel-29d81.appspot.com",
+      messagingSenderId: "838315840167"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <!-- Icons Font Awesome -->
+  <script src="https://use.fontawesome.com/f1462b63cd.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
