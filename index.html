@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Api</title>
+  <!-- Icono de pestaña -->
+  <link rel="shortcut icon" href="assets/IMG/marvel.png" type="image/png">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900|Sacramento" rel="stylesheet">
   <!-- Materialize Css -->
@@ -15,17 +17,18 @@
 <body>
   <!-- login -->
   <main>
-    <center>
+    <center class="red darken-1">
+      <img class="responsive-img logo" src="assets/IMG/marvel.png" alt="Logo marvel" />
       <div class="container">
         <div class=" marco z-depth-1 grey lighten-4 row">
           <h5 class="indigo-text">Please, login into your account</h5>
           <!-- Ingreso con google -->
           <form class="col s12" method="post">
             <div class='row container'>
-              <button type='submit' name='btn_google' class='col s12 btn waves-effect red social'>
+              <button type='submit' name='btn_google' class='col s12 btn waves-effect red darken-3 social'>
                 <i class="fa fa-google" aria-hidden="true"></i> Sign Google
               </button>
-              <button type='submit' name='btn_facebook' class='col s12 btn waves-effect blue social'>
+              <button type='submit' name='btn_facebook' class='col s12 btn waves-effect light-blue darken-3 social'>
                 <i class="fa fa-facebook" aria-hidden="true"></i> Sign Facebook
               </button>
               <div class='col s12'>
@@ -51,41 +54,40 @@
               </label>
             </div>
             <!-- modal de registro -->
+                <!-- Modal Structure -->
+                <div id="createCount" class="modal">
+                  <div class="modal-content">
+                    <!-- Input email-->
+                    <div class='row'>
+                      <div class='input-field col s12'>
+                        <input class='validate' type='email' name='email' id='email2' />
+                        <label for='email'>Enter your email</label>
+                      </div>
+                    </div>
+                    <!-- Input Password -->
+                    <div class='row'>
+                      <div class='input-field col s12'>
+                        <input class='validate' type='password' name='password' id='password2' />
+                        <label for='password'>Enter your password</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="#!" class="waves-effect waves-light btn col s12 modal-trigger grey darken-4">Sign up</a>
+                  </div>
+                </div>
+                <!-- Fin Modal Structure -->
             
-            
-            <!-- boton login -->
+            <!-- boton login y registro-->
             <center>
               <div class='row'>
-                <a class="waves-effect waves-light btn col s12 modal-trigger pink lighten-1" href="#createCount" name=btn_login type='submit'>Log In</a>
-                <a class="waves-effect waves-light btn col s12 modal-trigger" href="#createCount" name=btn_sigup>Sign Up</a>
+                <a class="waves-effect waves-light btn col s12 red accent-4" href="#createCount" name=btn_login type='submit'>Log In</a>
+                <a class="waves-effect waves-light btn col s12 modal-trigger grey darken-4" href="#createCount" name=btn_sigup>Sign Up</a>
               </div>
             </center>
           </form>
         </div>
       </div>
-      
-    <!-- Modal Structure -->
-      <div id="createCount" class="modal">
-        <div class="modal-content">
-          <!-- Input email-->
-            <div class='row'>
-              <div class='input-field col s12'>
-                <input class='validate' type='email' name='email' id='email2' />
-                <label for='email'>Enter your email</label>
-              </div>
-            </div>
-            <!-- Input Password -->
-            <div class='row'>
-              <div class='input-field col s12'>
-                <input  class='validate' type='password' name='password' id='password2' />
-                <label for='password'>Enter your password</label>
-              </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="waves-effect waves-light btn col s12 modal-trigger">Sign up</a>
-        </div>
-      </div> <!-- Fin Modal Structure -->
     </center>
   </main> <!-- fin del login  -->
   

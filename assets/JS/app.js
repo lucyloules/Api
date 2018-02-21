@@ -24,8 +24,8 @@ $(document).ready(function() {
   // Registro de nuevos usuarios*/
   function registrar() {
   // console.log('diste click en Ingresar');
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    var email = document.getElementById('email2').value;
+    var password = document.getElementById('password2').value;
     // console.log(email);
     // console.log(password);
     if (email === '' || password === '') {
