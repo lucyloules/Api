@@ -92,11 +92,23 @@
   </main> <!-- fin del login  -->
   
   <!-- section Api -->
-  <section>
+  <section class="contenido">
+    <nav class="red darken-1">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">
+          <img class="logo logo-nav" src="assets/IMG/marvel.png" alt="Marvel">
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a href="#">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <div class="row">
       <div class="col-s-12">
         <input id="input-Text" type="text" name="" value="">
-        <button id="btn-search" type="button" name="button">Buscar</button>
+        <button id="btn-search" onclick="cerrar()" class="waves-effect waves-light btn grey darken-4 white-text"type="button" name="button">Buscar</button>
       </div>
     </div>
   </section>
@@ -104,7 +116,7 @@
     <div class="row">
       <div class="col-lg-12 imgMarvel"></div>
       <div class="col-lg-12 col-lg-offset-4 text-center">
-        <div class="marvelDate"></div>
+        <div class="marvelDate grey darken-4"></div>
       </div>
     </div>
   </section>
@@ -124,7 +136,7 @@
     firebase.initializeApp(config);
   </script>
   <!-- Icons Font Awesome -->
-  <script src="https://use.fontawesome.com/f1462b63cd.js"></script>}
+  <script src="https://use.fontawesome.com/f1462b63cd.js"></script>
   <!-- JQuery  -->
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
   <!-- Compiled and minified JavaScript Materialize-->

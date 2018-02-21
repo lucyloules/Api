@@ -45,6 +45,57 @@ $(document).ready(function() {
         });
     }
   }
+  /* función que observa la sesion activa de un usuario*/
+  function observador() {
+    // Si existe un cambio de usuario, se ejecuta un if y caso contrario ejecuta un else
+    firebase.auth()
+      .onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          aparece(user); // se envia el parametro user a la funcion aparece
+          console.log('Existe usuario activo');
+          var displayName = user.displayName;
+          var email = user.email;
+          // console.log('Correo verificado: ' + user.emailVerified);
+          // var emailVerified = user.photoURL;
+          var isAnonymous = user.isAnonymous;
+          var uid = user.uid;
+          var providerData = user.providerData;
+        } else {
+          // No user is signed in.
+          console.log('No existe usuario activo');
+        }
+      });
+  }
+  observador(); // se ejecuta cuando se carga la practica
+
+  /* Contenido para usuarios logueados*/
+  function aparece(user) { // parametro user recibido desde el observador
+    var user = user;
+    var contenido = document.getElementById('contenido');
+    if (user.emailVerified) {
+      /* Comillas especiales nos permiten hacer template donde podemos escribir codigo html en el codigo javascript*/
+      contenido.innerHTML = `
+      <p>Bienvenido</p>  
+      <button onclick="cerrar()">Cerrar sesión</button>
+      `;
+    }
+    // contenido.innerHTML = 'prueba del perfil usuario';
+  }
+  /* Funcion para desloguearse*/
+  function cerrar() {
+    firebase.auth().signOut() // Cierra sesion desde firebase, toma 2 parametros then y catch
+      .then(function() { // (respuesta positiva)
+        // Sign-out successful.
+        // console.log('Sesión cerrada');
+        alert('Su sesion ha cerrado');
+      }).catch(function(error) {// (respuesta negativa)/error : parametro
+        // An error happened.
+        console.log(error);
+      });
+  }
+  // let btnSignout = document.getElementById('btnSigOut');
+  // btnSignout.addEventListener('click', cerrar);
   
   /* Api marvel */
   let inputText = document.getElementById('input-text');
