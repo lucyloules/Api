@@ -54,29 +54,25 @@ let btnSearch = document.getElementById('btn-search');
 let searchedForText;
 
 btnSearch.addEventListener('click',function(){
-	$('#marvelDate').empty();
+	$('.marvelDate').empty();
 	$('.imgMarvel').empty();
 	fetch('http://gateway.marvel.com/v1/public/comics?apikey=a60bd159889749a73669c0be9f91ce67&ts=9&hash=45cbdbeb188c66926f8b050dde897f1b')
   .then (function(response){
     return response.json();
+  })
+  .then(function(data){
+    console.log(data)
+
+    let title= data.results.title;
+    let description= data.results.variantDescription;
+    let results=[];
+
+    for(let i = 0; i < data.results.length; i++){
+     results.push(data.results[i].data.results.title)
+   }
+   console.log(results);
+
   });
-.then (function(data){
-  console.log(data)
+
 });
-  //.then((response)=>{
-		//console.log(response);
-		//return response.json();
-	});
-
-/*
-function getCall() {
-	const informationRequest = new XMLHttpRequest(); // creamos nuestro objeto
-	// Usamos el método open(), donde debemos poner la key
-	informationRequest.open('GET',``);
-	informationRequest.onload = getCall;
-	informationRequest.onerror = handleError;
-	informationRequest.send(); // Enviamos la petición
-}
-*/
-
 });
