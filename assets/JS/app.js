@@ -55,24 +55,29 @@ let searchedForText;
 
 btnSearch.addEventListener('click',function(){
 	$('.marvelDate').empty();
-	$('.imgMarvel').empty();
+	/*$('.imgMarvel').empty();*/
 	fetch('http://gateway.marvel.com/v1/public/comics?apikey=a60bd159889749a73669c0be9f91ce67&ts=9&hash=45cbdbeb188c66926f8b050dde897f1b')
   .then (function(response){
+
     return response.json();
   })
   .then(function(data){
-    console.log(data)
+    console.log(data);
+    let content = [];
+    let iD=[];
 
-    let title= data.results.title;
-    let description= data.results.variantDescription;
-    let results=[];
 
-    for(let i = 0; i < data.results.length; i++){
-     results.push(data.results[i].data.results.title)
+    for(let i = 0; i < data.data.results.length; i++){
+     content.push(data.data.results[i].title);
    }
-   console.log(results);
+   console.log(content);
+   for (var i = 0; i < data.data.results.length; i++) {
+     iD.push(data.data.results[i].id);
+   }
+   console.log(iD);
 
-  });
+   $('.marvelDate').append('<h6>' + content + '</h6>');
 
+ });
 });
 });
