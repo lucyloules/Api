@@ -16,7 +16,7 @@
 
 <body>
   <!-- login -->
-  <main>
+  <main id='main'>
     <center class="red darken-1">
       <img class="responsive-img logo" src="assets/IMG/marvel.png" alt="Logo marvel" />
       <div class="container">
@@ -25,10 +25,10 @@
           <!-- Ingreso con google -->
           <form class="col s12" method="post">
             <div class='row container'>
-              <button type='submit' name='btn_google' class='col s12 btn waves-effect red darken-3 social'>
+              <button type='submit' id='btn_google' class='col s12 btn waves-effect red darken-3 social'>
                 <i class="fa fa-google" aria-hidden="true"></i> Sign Google
               </button>
-              <button type='submit' name='btn_facebook' class='col s12 btn waves-effect light-blue darken-3 social'>
+              <button type='submit' id='btn_facebook' class='col s12 btn waves-effect light-blue darken-3 social'>
                 <i class="fa fa-facebook" aria-hidden="true"></i> Sign Facebook
               </button>
               <div class='col s12'>
@@ -37,14 +37,14 @@
             <!-- Input email-->
             <div class='row'>
               <div class='input-field col s12'>
-                <input class='validate' type='email' name='email' id='email' />
+                <input class='validate' type='email' id='email' />
                 <label for='email'>Enter your email</label>
               </div>
             </div>
             <!-- Input Password -->
             <div class='row'>
               <div class='input-field col s12'>
-                <input  class='validate' type='password' name='password' id='password' />
+                <input  class='validate' type='password' id='password' />
                 <label for='password'>Enter your password</label>
               </div>
               <label style='float: right;'>
@@ -53,36 +53,11 @@
                 </a>
               </label>
             </div>
-            <!-- modal de registro -->
-                <!-- Modal Structure -->
-                <div id="createCount" class="modal">
-                  <div class="modal-content">
-                    <!-- Input email-->
-                    <div class='row'>
-                      <div class='input-field col s12'>
-                        <input class='validate' type='email' name='email' id='email2' />
-                        <label for='email'>Enter your email</label>
-                      </div>
-                    </div>
-                    <!-- Input Password -->
-                    <div class='row'>
-                      <div class='input-field col s12'>
-                        <input class='validate' type='password' name='password' id='password2' />
-                        <label for='password'>Enter your password</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <a href="#!" class="waves-effect waves-light btn col s12 modal-trigger grey darken-4">Sign up</a>
-                  </div>
-                </div>
-                <!-- Fin Modal Structure -->
-
             <!-- boton login y registro-->
             <center>
               <div class='row'>
-                <a class="waves-effect waves-light btn col s12 red accent-4" href="#createCount" name=btn_login type='submit'>Log In</a>
-                <a class="waves-effect waves-light btn col s12 modal-trigger grey darken-4" href="#createCount" name=btn_sigup>Sign Up</a>
+                <a class="waves-effect waves-light btn col s12 red accent-4" href="#" id="btnLogIn" type='submit'>Log In</a>
+                <a class="waves-effect waves-light col s12 btn grey darken-4 modal-trigger" href="#modal1">Sign Up</a>
               </div>
             </center>
           </form>
@@ -90,36 +65,63 @@
       </div>
       </center>
     </main> <!-- fin del login  -->
-
-  <!-- section Api -->
-  <section class="contenido">
-    <nav class="red darken-1">
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">
-          <img class="logo logo-nav" src="assets/IMG/marvel.png" alt="Marvel">
-        </a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li>
-            <a href="#">Sign Out</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="row">
-      <div class="col-s-12">
-        <input id="input-Text" type="text" name="" value="">
-        <button id="btn-search" onclick="cerrar()" class="waves-effect waves-light btn grey darken-4 white-text"type="button" name="button">Buscar</button>
+<!-- modal de registro -->
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <!-- Input email-->
+    <div class='row'>
+      <div class='input-field col s12'>
+        <input class='validate' type='email' id='email2' />
+        <label for='email'>Enter your email</label>
       </div>
     </div>
-  </section>
-  <section>
-    <div class="row">
-      <div class="col-lg-12 imgMarvel"></div>
-      <div class="col-lg-12 col-lg-offset-4 text-center">
-        <div class="marvelDate grey darken-4"></div>
+    <!-- Input Password -->
+    <div class='row'>
+      <div class='input-field col s12'>
+        <input class='validate' type='password' id='password2' />
+        <label for='password'>Enter your password</label>
       </div>
     </div>
-  </section>
+  </div>
+    <div class="modal-footer">
+      <button id="btnSignIn" data-target="modal1" class="btn modal-action modal-close waves-effect waves-green">Create Account</button>
+    </div>
+</div>
+<!-- Fin Modal Structure -->
+    
+    <!-- section Api -->
+    <section id="contenido">
+      <nav class="red darken-1">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">
+            <img class="logo logo-nav" src="assets/IMG/marvel.png" alt="Marvel">
+          </a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+              <a href="#">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col-s-12">
+          <input id="input-Text" type="text" name="" value="">
+          <button id="btn-search" onclick="cerrar()" class="waves-effect waves-light btn grey darken-4 white-text"type="button" name="button">Buscar</button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="row">
+        <div class="col-lg-12 imgMarvel"></div>
+        <div class="col-lg-12 col-lg-offset-4 text-center">
+          <div class="marvelDate grey darken-4"></div>
+        </div>
+      </div>
+    </section>
+    
+   
+  
 
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
@@ -142,7 +144,9 @@
   <!-- Compiled and minified JavaScript Materialize-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="assets/JS/app.js"></script>
+<script src="assets/JS/firebase.js"></script>
   <script src="assets/JS/appModal.js"></script>
+
 </body>
 
 </html>
